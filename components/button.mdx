@@ -1,0 +1,25 @@
+---
+title: "Button"
+---
+
+## Creating a Button
+
+Buttons allow users to trigger actions when clicked. You can create a button inside a tab using the `createButton` function.
+
+### Parameters
+
+- **Name** (string): The text displayed on the button.
+- **Callback** (function): The function that runs when the button is clicked.
+
+### Example Usage
+
+Here’s how to create a button in `raii.lib`:
+
+```lua
+local button = mainTab:createButton({
+	Name = "This is a button", -- Text displayed on the button
+	Callback = function()
+		print("Clicked button!") -- Runs when the button is clicked
+	end,
+})
+```

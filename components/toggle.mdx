@@ -1,0 +1,29 @@
+---
+title: "Toggle"
+---
+
+## Creating a Toggle
+
+Toggles are interactive switches that allow users to enable or disable a setting. You can create a toggle inside a tab using the `createToggle` function.
+
+### Parameters
+
+- **Name** (string): The text displayed next to the toggle.
+- **toggleState** (boolean): The initial state of the toggle (`true` for on, `false` for off).
+- **Callback** (function): A function that runs whenever the toggle is switched. The function receives the new toggle state as a parameter (boolean).
+
+### Example Usage
+
+Here’s how to create a toggle in `raii.lib`:
+
+```lua
+local toggle = mainTab:createToggle({
+	Name = "This is a toggle", -- Text displayed next to the toggle
+	toggleState = false,       -- Initial toggle state (off by default)
+	Callback = function(Value)
+		if Value then 
+			print("Toggle on") -- Runs when toggled on
+		end
+        print("Current Value: " .. tostring(Value))
+	end
+})

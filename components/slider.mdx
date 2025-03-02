@@ -1,0 +1,32 @@
+---
+title: "Slider"
+---
+
+## Creating a Slider
+
+Sliders allow users to select a value within a specified range by dragging a handle. You can create a slider inside a tab using the `createSlider` function.
+
+### Parameters
+
+- **Name** (string): The text displayed next to the slider.
+- **Range** (table): Defines the minimum and maximum values `{min, max}`.
+- **Increment** (number): Determines the step size when adjusting the slider.
+- **Measurement** (string): A label displayed next to the slider value (e.g., `"px"`, `"%"`, or `"Volume"` or `"Studs"`).
+- **currValue** (number): The initial value of the slider.
+- **Callback** (function): A function that runs whenever the slider value changes. The function receives the new value as a parameter.
+
+### Example Usage
+
+Here’s how to create a slider in `raii.lib`:
+
+```lua
+local slider = mainTab:createSlider({
+	Name = "This is a slider",      -- Text displayed next to the slider
+	Range = {0, 1000},             -- Min and max values
+	Increment = 10,                -- Step size
+	Measurement = "Slider Measurement", -- Label for the value
+	currValue = 500,               -- Initial value of the slider
+	Callback = function(value)
+		print(value)                -- Runs when slider value changes
+	end,
+})

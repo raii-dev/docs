@@ -1,0 +1,63 @@
+---
+title: Full Script
+description: "A full example script of how to use raii.lib"
+---
+
+# Full Example Script
+
+```lua
+local raiiLibrary = loadstring(game:HttpGet("https://raiidev.xyz/raiilib/raiilib.lua"))()
+
+local window = raiiLibrary:createWindow({
+	Name = "raii.library",          -- The name of the window
+	Theme = "Dark",                 -- Set the theme to dark (other theme is "Blue")
+	Blur = true,                    -- Apply a blur effect to the window when loading
+	Loading = {                     -- Set the loading screen parameters
+		Name = "raii.library",      -- The name displayed during loading
+		Desc = "by raii.dev"        -- Description displayed during loading
+	},
+	activeTab = "Main Tab"           -- Set the default active tab
+})
+
+local mainTab = window:createTab("Main Tab") -- Creates a tab named "Main Tab"
+
+local mainSection = mainTab:createSection("This is the main section")  -- Creates a section
+
+local button = mainTab:createButton({
+	Name = "This is a button", -- Text displayed on the button
+	Callback = function()
+		print("Clicked button") -- Runs when the button is clicked
+	end,
+})
+
+local toggle = mainTab:createToggle({
+	Name = "This is a toggle", -- Text displayed next to the toggle
+	toggleState = false,       -- Initial toggle state (off by default)
+	Callback = function(Value)
+		if Value then 
+			print("Toggle on") -- Runs when toggled on
+		end
+        print("Current Value: " .. tostring(Value))
+	end
+})
+
+local slider = mainTab:createSlider({
+	Name = "This is a slider",      -- Text displayed next to the slider
+	Range = {0, 1000},             -- Min and max values
+	Increment = 10,                -- Step size
+	Measurement = "Slider Measurement", -- Label for the value
+	currValue = 500,               -- Initial value of the slider
+	Callback = function(value)
+		print(value)                -- Runs when slider value changes
+	end,
+})
+
+local inputText = mainTab:createInputText({
+	Name = "This is an input text", -- Label displayed next to the input field
+	Callback = function(inputText)
+		if inputText ~= nil then
+			print(inputText)
+		end
+	end,
+})
+```

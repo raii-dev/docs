@@ -1,0 +1,34 @@
+---
+title: "Window"
+---
+
+## Creating a Window
+
+You can create a window for your UI projects using the `createWindow` function. This function allows you to set up a window with various properties, including its name, theme, blur effect, and loading screen.
+
+### Parameters
+
+- **Name** (string): The name of the window that will be displayed.
+- **Theme** (string): Specifies the theme of the window. It can be set to `"Dark"`, `"Light"`, or any other custom theme you've defined in your project.
+- **Blur** (boolean): When set to `true`, the window will have a blur effect applied to its background in the loading screen.
+- **Loading** (table): This table contains properties related to the loading screen that appears when the library is initializing.
+  - **Name** (string): The name of the loading screen, which is typically displayed at the center.
+  - **Desc** (string): A short description that appears below the name during the loading process.
+- **activeTab** (string): Specifies the active tab to be shown in the window initially.
+
+### Example Usage
+
+Here's an example of how to create a window with `raii.lib`:
+
+```lua
+local window = raiiLibrary:createWindow({
+	Name = "raii.library",          -- The name of the window
+	Theme = "Dark",                 -- Set the theme to dark (other theme is "Blue")
+	Blur = true,                    -- Apply a blur effect to the window when loading
+	Loading = {                     -- Set the loading screen parameters
+		Name = "raii.library",      -- The name displayed during loading
+		Desc = "by raii.dev"        -- Description displayed during loading
+	},
+	activeTab = "Main Tab"           -- Set the default active tab
+})
+```
