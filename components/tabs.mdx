@@ -9,10 +9,13 @@ Tabs help organize different sections of your UI within the same window. You can
 ### Parameters
 
 - **Name** (string): The name of the tab that will be displayed.
+- **Icon** (string): The lucide icon that will be displayed, if non it wont show any by default.
 
 ### Example Usage
 
 Here’s how to create a tab in `raii.lib`:
 
 ```lua
-local mainTab = window:createTab("Main Tab") -- Creates a tab named "Main Tab"
+local mainTab = window:createTab("Tab 1", 'crosshair') -- Creates a tab 
+local espTab = window:createTab("Tab 1", 'eye') -- Creates a tab 
+```
